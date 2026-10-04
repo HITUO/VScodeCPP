@@ -9,3 +9,9 @@
 
 # 4. 保留 .gitignore 本身（不然你的忽略规则无法提交，别人拉取代码后规则会失效）
 !.gitignore
+
+!.clangd
+
+!LICENSE
+
+!*.md
