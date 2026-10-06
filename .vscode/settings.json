@@ -1,0 +1,39 @@
+// {
+//     "code-runner.executorMap": {
+//         "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt.exe && .\\$fileNameWithoutExt.exe"
+//     },
+//     "code-runner.runInTerminal": true,
+    
+//     "clangd.path": "clangd",
+//     "clangd.arguments": [
+//         "--background-index",
+//         "--completion-style=detailed",
+//         "--all-scopes-completion",
+//         "-j=4",
+//         "--pch-storage=memory",
+//         "--header-insertion=never",
+        // "--hover-show-aka=0"
+//     ]
+// }
+{
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt.exe && .\\$fileNameWithoutExt.exe"
+    },
+    "code-runner.runInTerminal": true,
+    "clangd.path": "clangd",
+    "clangd.arguments": [
+        "--background-index",
+        "--completion-style=detailed",
+        "--all-scopes-completion",
+        "-j=8",
+        "--header-insertion=never",
+        "--function-arg-placeholders=0"
+    ],
+    "[cpp]": {
+        "editor.tabSize": 2,              // 我要 2 空格
+        "editor.insertSpaces": true,      // 用空格
+        "editor.detectIndentation": false, // 不听别人的
+        "editor.formatOnSave": true,                                    // ← 保存时自动格式化
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"  // ← 用 clangd 格式化
+    }
+}

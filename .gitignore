@@ -17,3 +17,5 @@
 !*.md
 
 !ZZZ.clean_exe.bat
+
+!*.json
