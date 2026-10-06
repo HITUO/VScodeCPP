@@ -7,7 +7,7 @@ using namespace std;
 using LL = long long;
 using VI = vector<int>;
 
-const int kMaxN = 2e5 + 7, INF = 4e18;
+const int kMaxN = 5e5 + 7, INF = 4e18;
 
 int n;
 VI w;
@@ -129,7 +129,7 @@ signed main() {
       }
     }
     for (int v = 2; v <= n; v++) {
-      if (s[v] > x) {
+      if (s[v] >= x) {
         int lim = T - x - s[v];
         if (suf_min[out[v] + 1] <= lim || pre_min[in[v] - 1] <= lim) {
           return 1;
