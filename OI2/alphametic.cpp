@@ -15,6 +15,8 @@ string s;
 int tot = 0, n;
 
 signed main() {
+  freopen("alphametic.in", "r", stdin);
+  freopen("alphametic.out", "w", stdout);
   ios::sync_with_stdio(0), cin.tie(0);
   cin >> s;
   n = s.size();
