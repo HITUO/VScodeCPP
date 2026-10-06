@@ -15,8 +15,8 @@ vector<VI> adj;
 
 signed main() {
   ios::sync_with_stdio(0), cin.tie(0);
-  // freopen("yuong.in", "r", stdin);
-  // freopen("young.out", "w", stdout);
+  freopen("yuong.in", "r", stdin);
+  freopen("young.out", "w", stdout);
   cin >> n;
   w.assign(n + 1, 0);
   for (int i = 1; i <= n; i++) {
