@@ -69,6 +69,7 @@ signed main() {
             break;
           }
         }
+        st.push_back(num[j]);
         ton[i][j + 1] = ton[i][find_num];
       }
     }
