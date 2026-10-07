@@ -19,28 +19,30 @@ signed main() {
   for (int i = 1; i <= n; i++) {
     cin >> a[i];
     (sum += a[i]) %= p;
+  }
+  for (int i = 1; i <= n; i++) {
     if (~i) {
       if (sum - minn >= k) {
         ans = min(ans, sum - minn);
       }
       int num = *ss.lower_bound(sum - k + p);
-      if (num <= sum - k + p) {
+      if (sum + num + p >= k) {
         if (num > sum) {
           ans = min(ans, sum - num + p);
         }
       }
     }
-    if (sum >= k) {
-      ans = min(ans, sum);
-    }
-    if (minn == -1) {
-      minn = sum;
-    } else {
-      minn = min(minn, sum);
-    }
-    ss.insert(sum);
+  }
+  if (sum >= k) {
+    ans = min(ans, sum);
+  }
+  if (minn == -1) {
+    minn = sum;
+  } else {
     minn = min(minn, sum);
   }
+  ss.insert(sum);
+  minn = min(minn, sum);
   cout << ans;
   return 0;
 }
