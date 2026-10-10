@@ -1,3 +1,5 @@
+@REM  .\ZZZ.clean_exe.bat
+
 @echo off
 chcp 65001 >nul
 setlocal enabledelayedexpansion
