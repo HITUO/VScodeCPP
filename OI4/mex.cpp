@@ -13,8 +13,8 @@ int T, n, k, a[kMaxN], vis[kMaxN], ans;
 
 signed main() {
   ios::sync_with_stdio(0), cin.tie(0);
-  freopen("mex.in", "r", stdin);
-  freopen("mex.out", "w", stdout);
+  // freopen("mex.in", "r", stdin);
+  // freopen("mex.out", "w", stdout);
   cin >> T;
   while (T--) {
     cin >> n >> k;

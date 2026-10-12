@@ -14,11 +14,12 @@ int n, k, p;
 signed main() {
   ios::sync_with_stdio(0), cin.tie(0);
   mt19937_64 rnd(time(0));
-  int n = rnd() % 1000;
+  cout << 1 << "\n";
+  int n = rnd() % 500;
   int k = rnd() % n;
   cout << n << " " << k << "\n";
   for (int i = 0; i < n; i++) {
-    cout << rnd() % (n + 100) << " ";
+    cout << rnd() % (n + 10) << " ";
   }
   return 0;
 }
