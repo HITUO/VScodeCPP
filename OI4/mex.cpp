@@ -84,14 +84,23 @@ signed main() {
     //   cout << i << " ";
     // }
     // cout << "\n";
+    bool exitt = 0;
     for (int i = 1; i < k; i++) {
       if (m.count(i) == 0) {
         while (trsh.back() <= i) {
           trsh.pop_back();
         }
+        if (trsh.empty()) {
+          cout << "-1\n";
+          exitt = 1;
+          break;
+        }
         ans += trsh.back() - i;
         trsh.pop_back();
       }
+    }
+    if (exitt) {
+      continue;
     }
     cout << ans << "\n";
   }
