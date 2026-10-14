@@ -13,24 +13,15 @@ string s1, s2, s3;
 int n, ans = 0;
 
 bool isk(int x, int y) { // [x, y]
-  __int128 sum1 = 0, sum2 = 0, sum3 = 0;
-  for (int i = x; i <= y; i++) {
-    sum1 *= 10;
-    sum1 += s1[i - 1] - '0';
+  int jiw = 0;
+  for (int i = y - 1; i >= x - 1; i--) {
+    if ((s1[i] - '0' + s2[i] - '0' + jiw) % 10 != s3[i] - '0') {
+      return 0;
+    }
+    int k = s1[i] - '0' + s2[i] - '0' + jiw;
+    jiw = k / 10;
   }
-  for (int i = x; i <= y; i++) {
-    sum2 *= 10;
-    sum2 += s2[i - 1] - '0';
-  }
-  for (int i = x; i <= y; i++) {
-    sum3 *= 10;
-    sum3 += s3[i - 1] - '0';
-  }
-  // cout << sum1 << " " << sum2 << " " << sum3 << "\n";
-  if (sum1 == sum3 - sum2) {
-    return 1;
-  }
-  return 0;
+  return 1;
 }
 
 signed main() {
