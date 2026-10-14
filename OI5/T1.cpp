@@ -21,15 +21,15 @@ signed main() {
   n = s1.size();
   for (int i = 0; i < n; i++) {
     a[i] = s1[i] - '0' + s2[i] - '0';
-    if (a[i] > 10) {
+    if (a[i] >= 10) {
       jiw.insert(i);
       a[i] -= 10;
     }
   }
-  for (auto i : jiw) {
-    cout << i << " ";
-  }
-  cout << "\n";
+  // for (auto i : jiw) {
+  //   cout << i << " ";
+  // }
+  // cout << "\n";
   for (int i = 0; i < n; i++) {
     auto k = jiw.lower_bound(i);
     if (a[i] == s3[i] - '0' && k == jiw.end()) {
