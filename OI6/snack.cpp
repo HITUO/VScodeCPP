@@ -37,7 +37,7 @@ signed main() {
     cout << "-1";
     return 0;
   }
-  for (int i = 1; i <= n; i++) {
+  for (int i = n + 1; i <= n * 2; i++) {
     if (ll[i] == 1) {
       q.push(i);
     }
@@ -45,12 +45,15 @@ signed main() {
   while (!q.empty()) {
     int u = q.front();
     q.pop();
-    ans.push_back(u);
     vis[u] = 1;
     for (auto v : a[u]) {
+      if (vis[v] == 1) {
+        continue;
+      }
+      ans.push_back(v);
       vis[v] = 1;
       for (auto vv : a[v]) {
-        if (vis[vv] == 1) {
+        if (vis[vv] == 1 || vv == u) {
           continue;
         }
         ll[vv]--;
@@ -64,6 +67,7 @@ signed main() {
     cout << "-1";
     return 0;
   }
+  reverse(ans.begin(), ans.end());
   for (int i : ans) {
     cout << i << " ";
   }
