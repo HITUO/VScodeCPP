@@ -37,38 +37,33 @@ signed main() {
     cout << "-1";
     return 0;
   }
-  for (int i = n + 1; i <= n * 2; i++) {
+  for (int i = 1; i <= n; i++) {
     if (ll[i] == 1) {
       q.push(i);
     }
   }
   while (!q.empty()) {
     int u = q.front();
-    vis[u] = 1;
     q.pop();
+    ans.push_back(u);
+    vis[u] = 1;
     for (auto v : a[u]) {
-      ll[v]--;
-      if (ll[v] >= 2) {
-        continue;
-      }
+      vis[v] = 1;
       for (auto vv : a[v]) {
-        if (vv == u) {
+        if (vis[vv] == 1) {
           continue;
         }
         ll[vv]--;
         if (ll[vv] == 1) {
           q.push(vv);
-          vis[vv] = 1;
         }
       }
-      ans.push_back(v);
     }
   }
-  // if (ans.size() != n) {
-  //   cout << "-1";
-  //   return 0;
-  // }
-  reverse(ans.begin(), ans.end());
+  if (ans.size() != n) {
+    cout << "-1";
+    return 0;
+  }
   for (int i : ans) {
     cout << i << " ";
   }
