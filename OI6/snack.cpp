@@ -15,8 +15,8 @@ queue<int> q;
 
 signed main() {
   ios::sync_with_stdio(0), cin.tie(0);
-  // freopen("snack.out", "r", stdin);
-  // freopen("snack.out", "w", stdout);
+  freopen("snack.out", "r", stdin);
+  freopen("snack.out", "w", stdout);
   cin >> n;
   fill(vis, vis + kMaxN, 0);
   for (int i = 1; i <= n; i++) {
