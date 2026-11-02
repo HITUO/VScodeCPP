@@ -7,7 +7,7 @@ using namespace std;
 using LL = long long;
 using VI = vector<int>;
 
-const int kMaxN = 2e5 + 7;
+const int kMaxN = 1e6 + 7;
 
 string s, p;
 int nxt[kMaxN];
@@ -17,9 +17,9 @@ signed main() {
   ios::sync_with_stdio(0), cin.tie(0);
   cin >> s >> p;
   int j = 0;
-  for (int i = 0; i < s.size(); i++) {
+  for (int i = 1; i < p.size(); i++) {
     while (j != 0 && p[j] != p[i]) {
-      j = nxt[j];
+      j = nxt[j - 1];
     }
     if (p[j] == p[i]) {
       j++;
@@ -29,7 +29,7 @@ signed main() {
   j = 0;
   for (int i = 0; i < s.size(); i++) {
     while (j != 0 && p[j] != s[i]) {
-      j = nxt[j];
+      j = nxt[j - 1];
     }
     if (p[j] == s[i]) {
       j++;
@@ -37,6 +37,12 @@ signed main() {
     if (j == p.size()) {
       ans.push_back(i - p.size() + 1);
     }
+  }
+  for (int i : ans) {
+    cout << i + 1 << "\n";
+  }
+  for (int i = 0; i < p.size(); i++) {
+    cout << nxt[i] << " ";
   }
   return 0;
 }
