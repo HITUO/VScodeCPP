@@ -7,7 +7,7 @@ using namespace std;
 using LL = long long;
 using VI = vector<int>;
 
-const int kMaxN = 2e5 + 7, SIZE = 1 << 16;
+const int kMaxN = 2e5 + 7;
 
 // inline int read() {
 //   int x = 0, f = 1;
