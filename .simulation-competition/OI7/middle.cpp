@@ -9,8 +9,7 @@ using VI = vector<int>;
 
 const int kMaxN = 2e5 + 7;
 
-int n, a[kMaxN], ans[kMaxN];
-pair<int, int> s[kMaxN];
+int n, a[kMaxN], ans[kMaxN], s[kMaxN], r, cnt, cov;
 
 signed main() {
   freopen("middle.in", "r", stdin);
@@ -20,23 +19,17 @@ signed main() {
   cin >> n;
   for (int i = 1; i <= n; i++) {
     cin >> a[i];
-  }
-  if (a[1] == a[n]) {
-    cout << n - 2;
-    return 0;
+    s[a[i]] = i;
   }
   for (int i = 1; i <= n; i++) {
-    if (s[a[i]].first != 0) {
-      s[a[i]].first++;
+    r = max(r, s[a[i]]);
+    if (cov > i) {
+      cnt++;
     } else {
-      s[a[i]].first++;
-      s[a[i]].second = i;
-    }
-    if (s[a[i]].first >= 2) {
-      ans[a[i]] = i - s[a[i]].second - 1;
+      cov = r;
     }
   }
-  cout << rand() % (n - 3);
+  cout << cnt;
   // for (int i = 1; i <= n; i++) {
   //   cout << ans[i] << " ";
   // }
