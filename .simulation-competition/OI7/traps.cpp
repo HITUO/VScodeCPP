@@ -32,14 +32,14 @@ bool check(int x) {
       } else if (v.l <= rr + 1) {
         rr = max(rr, v.r);
       } else {
-        u += rr - ll + 1;
+        u += (rr - ll + 1) * 2;
         ll = v.l;
         rr = v.r;
       }
     }
   }
   if (ll != -1) {
-    u += rr - ll + 1;
+    u += (rr - ll + 1) * 2;
   }
   return n + u + 1 <= t;
 }
