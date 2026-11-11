@@ -10,11 +10,10 @@ using VI = vector<int>;
 const int kMaxN = 1e6 + 7;
 
 signed main() {
-  freopen("sequence.in", "r", stdin);
-  freopen("sequence.out", "w", stdout);
+  // freopen("sequence.in", "r", stdin);
+  // freopen("sequence.out", "w", stdout);
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-
   int n, k;
   cin >> n >> k;
   vector<long long> a(n + 1), b(n + 1);
