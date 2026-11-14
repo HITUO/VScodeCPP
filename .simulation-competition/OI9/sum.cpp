@@ -14,6 +14,8 @@ int n, m, ans = 0;
 map<int, vector<pair<int, int>>> mp;
 
 signed main() {
+  freopen("sum.in", "r", stdin);
+  freopen("sum.out", "w", stdout);
   ios::sync_with_stdio(0), cin.tie(0);
   cin >> n >> m;
   vector<VI> a(n + 1, VI(m + 1)), vis(n + 1, VI(m + 1, 0));
