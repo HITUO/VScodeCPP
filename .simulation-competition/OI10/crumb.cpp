@@ -24,13 +24,13 @@ signed main() {
       cout << n - k << "\n";
       continue;
     }
+    if (k == 3 * n - 1) {
+      cout << "-1\n";
+      continue;
+    }
     int duo = k - n;
     if (duo % 2 == 0) {
       cout << "0\n";
-      continue;
-    }
-    if (k == 3 * n - 1) {
-      cout << "-1\n";
       continue;
     }
     cout << 1 << "\n";
